@@ -1,0 +1,65 @@
+---
+const navItems = [
+	{ href: "/#home", label: "Home" },
+	{ href: "/#about", label: "About Us" },
+	{ href: "/#services", label: "Services" },
+	{ href: "/#contact", label: "Contact" },
+];
+---
+
+<div
+	id="progressBar"
+	class="fixed left-0 top-0 z-50 h-1 w-full origin-left scale-x-0 bg-black transition-transform duration-100 dark:bg-white"
+	role="progressbar"
+	aria-label="Page scroll progress"
+	aria-valuemin="0"
+	aria-valuemax="100"
+	aria-valuenow="0"
+></div>
+
+<nav
+	class="relative z-20 flex flex-wrap items-center justify-between gap-4 bg-white p-5 shadow-sm dark:bg-gray-800"
+	aria-label="Primary navigation"
+>
+	<a
+		class="text-2xl font-bold text-black no-underline dark:text-white"
+		href="/#home"
+		aria-label="Carsbrand home"
+	>
+		Carsbrand
+	</a>
+
+	<ul class="flex flex-wrap items-center justify-center gap-4 text-sm">
+		{navItems.map((item) => (
+			<li>
+				<a
+					class="text-gray-700 no-underline transition-colors hover:text-black focus-visible:text-black dark:text-gray-200 dark:hover:text-white dark:focus-visible:text-white"
+					href={item.href}
+				>
+					{item.label}
+				</a>
+			</li>
+		))}
+	</ul>
+</nav>
+
+<script>
+	const progressBar = document.querySelector<HTMLElement>("#progressBar");
+
+	function updateScrollProgress() {
+		if (!progressBar) return;
+
+		const scrollableHeight =
+			document.documentElement.scrollHeight - document.documentElement.clientHeight;
+		const progress =
+			scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
+		const percentage = Math.min(100, Math.max(0, Math.round(progress * 100)));
+
+		progressBar.style.transform = `scaleX(${percentage / 100})`;
+		progressBar.setAttribute("aria-valuenow", String(percentage));
+	}
+
+	window.addEventListener("scroll", updateScrollProgress, { passive: true });
+	window.addEventListener("resize", updateScrollProgress);
+	updateScrollProgress();
+</script>

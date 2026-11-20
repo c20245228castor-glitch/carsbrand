@@ -1,0 +1,45 @@
+---
+const currentYear = new Date().getFullYear();
+
+const footerLinks = [
+	{ label: "Inventory", href: "/index/sections/cars/#inventory" },
+	{ label: "Financing", href: "/#services" },
+	{ label: "Trade-in", href: "/#services" },
+	{ label: "About us", href: "/#about" },
+];
+---
+
+<footer class="site-footer">
+	<div class="footer-main">
+		<section class="footer-brand" aria-label="Carsbrand">
+			<a class="brand" href="/" aria-label="Carsbrand home">
+				<span class="brand-mark" aria-hidden="true">
+					<svg viewBox="0 0 48 48" role="img">
+						<path d="M9 29.5 14.5 18h19L39 29.5v7h-5v-3H14v3H9v-7Z" />
+						<path
+							d="m17 20-3.5 7h21L31 20H17Z"
+							class="brand-glass"
+						/>
+						<circle cx="16" cy="34" r="4" />
+						<circle cx="32" cy="34" r="4" />
+					</svg>
+				</span>
+				<span>
+					Cars<span>brand</span>
+				</span>
+			</a>
+			<p>
+				Premium cars, honest service, and a buying experience designed
+				around you.
+			</p>
+		</section>
+	</div>
+
+	<div class="footer-bottom">
+		<p>&copy; {currentYear} Carsbrand. All rights reserved.</p>
+		<div>
+			<a href="#privacy">Privacy</a>
+			<a href="#terms">Terms</a>
+		</div>
+	</div>
+</footer>

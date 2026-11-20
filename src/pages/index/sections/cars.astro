@@ -1,0 +1,63 @@
+---
+import BaseLayout from "../../../layout/BaseLayout.astro";
+
+const categories = [
+	{
+		name: "Sedans",
+		description: "Comfortable, versatile cars for everyday driving.",
+		style: "bg-gray-200 text-black",
+	},
+	{
+		name: "SUVs",
+		description: "More room for passengers, cargo, and weekend plans.",
+		style: "bg-gray-300 text-gray-900",
+	},
+	{
+		name: "Electric",
+		description: "Explore all-electric options for your next drive.",
+		style: "bg-gray-100 text-gray-800",
+	},
+];
+---
+
+<BaseLayout title="Find a car | Carsbrand">
+	<div class="space-y-10">
+		<section class="mx-auto max-w-3xl text-center">
+			<p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
+				Carsbrand inventory
+			</p>
+			<h1 class="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">
+				Find a car for every kind of drive.
+			</h1>
+			<p class="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+				Start with a category and explore the kind of car that suits you.
+			</p>
+		</section>
+
+		<section class="grid gap-6 md:grid-cols-3" aria-label="Car categories">
+			{categories.map((category) => (
+				<article class="overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800">
+					<div class={`flex h-48 items-center justify-center ${category.style}`} aria-hidden="true">
+						<svg class="w-60 max-w-[85%] fill-current" viewBox="0 0 240 110">
+							<path d="m32 69 14-29c3-7 9-11 17-11h89c10 0 17 4 22 12l18 28 13 5v18H27V76l5-7Z" />
+							<path class="fill-white opacity-90" d="m57 43-10 22h54V36H65c-3 0-6 2-8 7Zm54-7v29h72l-16-24c-2-3-5-5-10-5h-46Z" />
+							<circle cx="67" cy="87" r="13" />
+							<circle cx="174" cy="87" r="13" />
+						</svg>
+					</div>
+					<div class="p-6">
+						<h2 class="mb-2 text-xl font-bold">{category.name}</h2>
+						<p class="leading-relaxed text-gray-600 dark:text-gray-300">{category.description}</p>
+					</div>
+				</article>
+			))}
+		</section>
+
+		<a
+			class="mx-auto block w-fit font-semibold underline underline-offset-4 hover:text-gray-600 dark:hover:text-gray-300"
+			href="/"
+		>
+			← Back to home
+		</a>
+	</div>
+</BaseLayout>
