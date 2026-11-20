@@ -1,23 +1,5 @@
 ---
 import BaseLayout from "../../../layout/BaseLayout.astro";
-
-const categories = [
-	{
-		name: "Sedans",
-		description: "Comfortable, versatile cars for everyday driving.",
-		style: "bg-gray-200 text-black",
-	},
-	{
-		name: "SUVs",
-		description: "More room for passengers, cargo, and weekend plans.",
-		style: "bg-gray-300 text-gray-900",
-	},
-	{
-		name: "Electric",
-		description: "Explore all-electric options for your next drive.",
-		style: "bg-gray-100 text-gray-800",
-	},
-];
 ---
 
 <BaseLayout title="Find a car | Carsbrand">
@@ -30,27 +12,83 @@ const categories = [
 				Find a car for every kind of drive.
 			</h1>
 			<p class="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
-				Start with a category and explore the kind of car that suits you.
+				Explore our featured vehicles, compare details, and check the
+				example listing prices.
 			</p>
 		</section>
 
-		<section class="grid gap-6 md:grid-cols-3" aria-label="Car categories">
-			{categories.map((category) => (
-				<article class="overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800">
-					<div class={`flex h-48 items-center justify-center ${category.style}`} aria-hidden="true">
-						<svg class="w-60 max-w-[85%] fill-current" viewBox="0 0 240 110">
-							<path d="m32 69 14-29c3-7 9-11 17-11h89c10 0 17 4 22 12l18 28 13 5v18H27V76l5-7Z" />
-							<path class="fill-white opacity-90" d="m57 43-10 22h54V36H65c-3 0-6 2-8 7Zm54-7v29h72l-16-24c-2-3-5-5-10-5h-46Z" />
-							<circle cx="67" cy="87" r="13" />
-							<circle cx="174" cy="87" r="13" />
-						</svg>
-					</div>
-					<div class="p-6">
-						<h2 class="mb-2 text-xl font-bold">{category.name}</h2>
-						<p class="leading-relaxed text-gray-600 dark:text-gray-300">{category.description}</p>
-					</div>
-				</article>
-			))}
+		<section
+			class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+			aria-label="Featured car listings"
+		>
+			<article class="overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800">
+				<img
+					src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=85"
+					alt="Silver sedan parked outdoors"
+					class="h-56 w-full object-cover"
+					loading="lazy"
+				/>
+				<div class="p-5">
+					<p class="mb-1 text-sm text-gray-500 dark:text-gray-400">
+						2024 · Sedan · Automatic
+					</p>
+					<h2 class="text-xl font-bold">Everyday Sedan</h2>
+					<p class="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+						A comfortable, fuel-efficient sedan with room for daily
+						commutes and weekend trips.
+					</p>
+					<p class="mt-4 text-2xl font-bold">$24,900</p>
+					<p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+						Example listing price
+					</p>
+				</div>
+			</article>
+
+			<article class="overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800">
+				<img
+					src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=85"
+					alt="SUV ready for a road trip"
+					class="h-56 w-full object-cover"
+					loading="lazy"
+				/>
+				<div class="p-5">
+					<p class="mb-1 text-sm text-gray-500 dark:text-gray-400">
+						2023 · SUV · Automatic
+					</p>
+					<h2 class="text-xl font-bold">Family SUV</h2>
+					<p class="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+						A spacious SUV with flexible cargo room and seating for
+						your next family adventure.
+					</p>
+					<p class="mt-4 text-2xl font-bold">$31,500</p>
+					<p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+						Example listing price
+					</p>
+				</div>
+			</article>
+
+			<article class="overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800">
+				<img
+					src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85"
+					alt="Sporty coupe on the road"
+					class="h-56 w-full object-cover"
+					loading="lazy"
+				/>
+				<div class="p-5">
+					<p class="mb-1 text-sm text-gray-500 dark:text-gray-400">
+						2024 · Coupe · Automatic
+					</p>
+					<h2 class="text-xl font-bold">Sport Coupe</h2>
+					<p class="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+						A sleek coupe with responsive handling and a
+						driver-focused interior.
+					</p>
+					<p class="mt-4 text-2xl font-bold">$38,750</p>
+					<p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+						Example listing price
+					</p>
+				</div>
+			</article>
 		</section>
 
 		<a

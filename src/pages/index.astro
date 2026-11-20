@@ -2,79 +2,13 @@
 import BaseLayout from "../layout/BaseLayout.astro";
 import About from "./index/sections/about.astro";
 import Contacts from "./index/sections/contacts.astro";
+import Services from "./index/sections/services.astro";
+import Projects from "./index/sections/projects.astro";
 ---
 
 <BaseLayout>
 	<About />
-
-	<section id="services" class="scroll-mt-8 space-y-8 rounded-2xl bg-gray-100 p-8 dark:bg-gray-800 sm:p-12">
-		<div class="space-y-3">
-			<p class="text-sm font-bold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
-				Our services
-			</p>
-			<h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Everything you need for your next drive.</h2>
-			<p class="max-w-2xl leading-relaxed text-gray-600 dark:text-gray-300">
-				We make it easier to find, compare, and get behind the wheel of a car that suits you.
-			</p>
-		</div>
-
-		<div class="grid gap-4 md:grid-cols-3">
-			<article class="rounded-xl bg-white p-6 shadow-sm dark:bg-gray-900">
-				<h3 class="mb-2 text-lg font-bold">Explore our cars</h3>
-				<p class="leading-relaxed text-gray-600 dark:text-gray-300">
-					Browse sedans, SUVs, and electric cars to find the right kind of vehicle for your needs.
-				</p>
-				<a
-					href="/index/sections/cars/"
-					class="mt-4 inline-block font-semibold underline underline-offset-4 hover:text-gray-600 dark:hover:text-gray-300"
-				>
-					Browse inventory <span aria-hidden="true">→</span>
-				</a>
-			</article>
-
-			<article class="rounded-xl bg-white p-6 shadow-sm dark:bg-gray-900">
-				<h3 class="mb-2 text-lg font-bold">Get personal guidance</h3>
-				<p class="leading-relaxed text-gray-600 dark:text-gray-300">
-					Tell us what you’re looking for and our team can help you compare your options.
-				</p>
-				<a
-					href="/#contact"
-					class="mt-4 inline-block font-semibold underline underline-offset-4 hover:text-gray-600 dark:hover:text-gray-300"
-				>
-					Talk to our team <span aria-hidden="true">→</span>
-				</a>
-			</article>
-
-			<article class="rounded-xl bg-white p-6 shadow-sm dark:bg-gray-900">
-				<h3 class="mb-2 text-lg font-bold">Plan a test drive</h3>
-				<p class="leading-relaxed text-gray-600 dark:text-gray-300">
-					Arrange a time to experience a vehicle in person before making your decision.
-				</p>
-				<a
-					href="/#contact"
-					class="mt-4 inline-block font-semibold underline underline-offset-4 hover:text-gray-600 dark:hover:text-gray-300"
-				>
-					Contact us <span aria-hidden="true">→</span>
-				</a>
-			</article>
-		</div>
-	</section>
-
-	<section id="projects" class="grid gap-4 rounded-2xl border border-gray-200 p-8 dark:border-gray-700 sm:p-12">
-		<p class="text-sm font-bold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
-			Featured cars
-		</p>
-		<h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Explore what moves you.</h2>
-		<p class="max-w-2xl leading-relaxed text-gray-600 dark:text-gray-300">
-			Discover sedans, SUVs, and electric cars in our growing collection.
-		</p>
-		<a
-			href="/index/sections/cars/"
-			class="w-fit font-semibold text-black underline underline-offset-4 hover:text-gray-600 dark:text-white dark:hover:text-gray-300"
-		>
-			View cars <span aria-hidden="true">→</span>
-		</a>
-	</section>
-
+	<Services />
+	<Projects />
 	<Contacts />
 </BaseLayout>
